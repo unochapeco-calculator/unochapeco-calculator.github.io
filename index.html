@@ -291,9 +291,14 @@
         }
 
         function excluirMethod(elementoClicado) {
-            const avaliacaoParaRemover = elementoClicado.parentElement.parentElement;
-            avaliacaoParaRemover.remove();
+            if (confirm("Tem certeza que deseja excluir esta avaliação?")) {
+            const avaliacaoParaRemover = elementoClicado.closest('.avaliacao');
+            if (avaliacaoParaRemover) {
+                avaliacaoParaRemover.remove();
         }
+    }
+}
+
 
         adicionarAvaliacao();
     </script>
